@@ -9,13 +9,20 @@
 <script type="text/jsx">
 var Badge = React.createClass({
   render: function() {
+    this.props // {}
+
     return <button className="btn btn-primary" type="button">
-      Messages <span className="badge">4</span>
+      {this.props.title} <span className="badge">{this.props.number}</span>
     </button>
   }
 });
 
-var element = React.createElement(Badge);
+var options = {
+  title: 'Inbox',
+  number: 32
+};
+
+var element = React.createElement(Badge, options);
 
 React.render(element, document.body);
 </script>
